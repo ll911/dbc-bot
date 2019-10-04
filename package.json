@@ -29,6 +29,7 @@
     "hubot-google-images": "^0.2.7",
     "hubot-google-translate": "awailly/hubot-google-translate#fix-tests",
     "hubot-help": "^1.0.1",
+    "hubot-health": "^0.1.0",
     "hubot-jira-links": "1.0.8",
     "hubot-maps": "0.0.3",
     "hubot-matteruser": "^5.3.1",
