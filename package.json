@@ -37,6 +37,7 @@
     "hubot-redis-brain": "^1.0.0",
     "hubot-rules": "^1.0.0",
     "hubot-scripts": "^2.17.2",
+    "hubot-search": "^0.1.2",
     "hubot-group": "^1.8.2",
     "hubot-shipit": "^0.2.1",
     "mattermost-client": "^6.1.1"
