@@ -40,6 +40,7 @@
     "hubot-search": "^0.1.2",
     "hubot-group": "^1.8.2",
     "hubot-shipit": "^0.2.1",
+    "hubot-timezone": "^1.0.1",
     "mattermost-client": "^6.1.1",
     "hubot-weather": "^1.0.4"
   },
