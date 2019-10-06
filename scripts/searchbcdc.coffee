@@ -9,7 +9,7 @@
 #   GOOGLE_CUSTOM_SEARCH
 #
 # Commands:
-#   dbc-bot (find)( me) <query> - returns URL's and Title's for 10 first results from custom search
+#   dbc-bot find <query> - returns URL's and Title's for 3 first results from custom search
 #
 # Notes:
 #   Limits for free version is 100 queries per day per API key
@@ -21,7 +21,7 @@ module.exports = (robot) ->
         key: process.env.GOOGLE_API_KEY
         cx: process.env.GOOGLE_CUSTOM_SEARCH
         fields: "items(title,link)"
-        num: 10
+        num: 3
         q: msg.match[3]
       .get() (err, res, body) ->
         resp = "";
