@@ -25,6 +25,7 @@
   "description": "dbc-bot",
   "dependencies": {
     "hubot": "^3.3.2",
+    "hubot-conversation": "^1.1.1",
     "hubot-diagnostics": "^1.0.0",
     "hubot-help": "^1.0.1",
     "hubot-health": "^0.1.0",
