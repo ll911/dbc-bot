@@ -15,7 +15,7 @@
     "url": "https://github.com/ll911/dbc-bot.git"
   },
   "bugs": {
-    "url": "https://github.com/ll911/dbc-botissues",
+    "url": "https://github.com/ll911/dbc-bot/issues",
     "email": "noreply@gov.bc.ca"
   },
   "main": "./src/matteruser.js",
