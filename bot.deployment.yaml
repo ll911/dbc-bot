@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deploymentType: bot
+    botname: megatron
+  labels:
+    app: megatron
+  name: megatron
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: megatron
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: megatron
+    spec:
+      containers:
+      - env:
+        - name: MATTERMOST_GROUP
+          value: dss
+        - name: MATTERMOST_HTTP_PORT
+          value: "443"
+        - name: HUBOT_JIRA_DOMAIN
+          value: proj.data.gov.bc.ca/jira
+        - name: MATTERMOST_HOST
+          valueFrom:
+            secretKeyRef:
+              key: host
+              name: hubot-mm-access
+        - name: MATTERMOST_USER
+          valueFrom:
+            secretKeyRef:
+              key: user
+              name: hubot-mm-access
+        - name: MATTERMOST_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: pwd
+              name: hubot-mm-access
+        - name: HUBOT_GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: gkey
+              name: hubot-mm-access
+        - name: GOOGLE_CUSTOM_SEARCH
+          valueFrom:
+            secretKeyRef:
+              key: gcscx
+              name: hubot-mm-access
+        - name: GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: gkey
+              name: hubot-mm-access
+        - name: HUBOT_OWM_APIKEY
+          valueFrom:
+            secretKeyRef:
+              key: owmkey
+              name: hubot-mm-access
+        - name: HUBOT_WEATHER_UNITS
+          value: metric
+        - name: TZ
+          value: America/Vancouver
+        - name: BOTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app']
+        image: docker-registry.default.svc:5000/wlev6y-tools/dbc-bot:latest
+        imagePullPolicy: Always
+        name: megatron
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
