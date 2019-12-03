@@ -75,4 +75,22 @@ spec:
         ports:
         - containerPort: 8080
           protocol: TCP
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 25
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 35
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1                    
         resources: {}
